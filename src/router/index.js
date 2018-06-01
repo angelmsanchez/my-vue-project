@@ -13,7 +13,15 @@ export default new Router({
       component: Home
     }, {
       path: '/home',
-      component: Home
+      component: Home,
+      beforeEnter: (to, from, next) => {
+        console.log("to: ", to);
+        console.log("from: ", from);
+        setTimeout(() => {
+          console.log('setTimeout');
+          next();
+        }, 3000);
+      }
     },
     {
       path: '/counter',
@@ -27,6 +35,10 @@ export default new Router({
       path: '/user/:id',
       name: 'user',
       component: User
+    },
+    {
+      path: '*',
+      component: Home
     }
   ]
 })
