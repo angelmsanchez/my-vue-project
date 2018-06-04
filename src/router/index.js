@@ -14,8 +14,16 @@ export default new Router({
     }, {
       path: '/home',
       component: Home,
+      meta: {
+        requiresAuth: true
+      },
       beforeEnter: (to, from, next) => {
-        console.log("to: ", to);
+        console.log("to: ", to.matched.some);
+        if (to.matched.some(record => record.meta.requiresAuth)) {
+          console.log("record: ");
+          // this route requires auth, check if logged in
+          // if not, redirect to login page.
+        }
         console.log("from: ", from);
         setTimeout(() => {
           console.log('setTimeout');
@@ -40,5 +48,12 @@ export default new Router({
       path: '*',
       component: Home
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    console.log('scrollBehavior');
+    return {
+      x: 0,
+      y: 0
+    };
+  }
 })

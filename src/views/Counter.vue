@@ -1,10 +1,12 @@
 <template>
-  <div class="page">
-    <counter></counter>
-    <div class="routing">
-      <div @click="goBack()">Go to Home</div>
-    </div>
-  </div>
+    <transition name="slide">
+      <div class="page">
+        <counter></counter>
+        <div class="routing">
+          <div @click="goBack()">Go to Home</div>
+        </div>
+      </div>
+    </transition>
 </template>
 
 <script>
