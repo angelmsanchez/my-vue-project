@@ -1,8 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './../views/Home';
-import Counter from './../views/Counter';
-import User from './../views/User';
+const Counter = resolve => {
+  require.ensure([], () => {
+    resolve(require('./../views/Counter'))
+  })
+}
+const User = resolve => {
+  require.ensure([], () => {
+    resolve(require('./../views/User'))
+  })
+}
 
 Vue.use(Router)
 
