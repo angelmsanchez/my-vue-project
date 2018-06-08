@@ -20,6 +20,7 @@
       <div class="routing">
         <router-link to="/counter">Go to Counter View</router-link>
         <div @click="goToUser()">Go to User View</div>
+        <router-link to="/test">Go to Test View</router-link>
       </div>
     </div>
   </transition>

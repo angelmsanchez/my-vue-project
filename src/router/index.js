@@ -11,6 +11,11 @@ const User = resolve => {
     resolve(require('./../views/User'))
   })
 }
+const Test = resolve => {
+  require.ensure([], () => {
+    resolve(require('./../views/Test'))
+  })
+}
 
 Vue.use(Router)
 
@@ -51,6 +56,10 @@ export default new Router({
       path: '/user/:id',
       name: 'user',
       component: User
+    },
+    {
+      path: '/test',
+      component: Test
     },
     {
       path: '*',
