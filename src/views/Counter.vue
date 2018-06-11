@@ -1,7 +1,10 @@
 <template>
     <transition name="slide">
       <div class="page">
-        <counter></counter>
+        <counter 
+          v-bind:count="$store.state.count"
+          v-on:output-count="outputCount($event)">
+        </counter>
         <div class="routing">
           <div @click="goBack()">Go to Home</div>
         </div>
@@ -17,9 +20,6 @@ export default {
     Counter
   },
   computed: {
-    count() {
-      return this.$store.state.count;
-    },
     username() {
       return this.$route.params.username;
     }
@@ -27,6 +27,9 @@ export default {
   methods: {
     goBack() {
       window.history.length > 1 ? this.$router.go(-1) : this.$router.push("/");
+    },
+    outputCount($event) {
+      this.$store.dispatch($event);
     }
   }
 };

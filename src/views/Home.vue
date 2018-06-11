@@ -28,16 +28,16 @@
 
 <script>
 export default {
-  name: "home",
+  name: 'home',
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      msg: 'Welcome to Your Vue.js App'
     };
   },
   methods: {
     goToUser() {
       const id = 123;
-      this.$router.push({ name: "user", params: { id } });
+      this.$router.push({ name: 'user', params: { id } });
     }
   }
 };
