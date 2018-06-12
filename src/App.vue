@@ -91,6 +91,4 @@ body {
     margin: 0 10px;
   }
 }
-#app {
-}
 </style>
