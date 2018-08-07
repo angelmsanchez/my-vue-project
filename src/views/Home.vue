@@ -3,19 +3,21 @@
     <div id="home">
       <img src="./../assets/logo.png">
       <h1>{{ msg }}</h1>
-      <h2>Essential Links</h2>
-      <ul>
-        <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-        <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-        <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-        <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      </ul>
+      <Calculator></Calculator>
       <h2>Ecosystem</h2>
       <ul>
-        <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-        <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-        <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-        <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
+        <li>
+          <a href="http://router.vuejs.org/" target="_blank">vue-router</a>
+        </li>
+        <li>
+          <a href="http://vuex.vuejs.org/" target="_blank">vuex</a>
+        </li>
+        <li>
+          <a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a>
+        </li>
+        <li>
+          <a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a>
+        </li>
       </ul>
       <div class="routing">
         <router-link to="/counter">Go to Counter View</router-link>
@@ -23,12 +25,7 @@
         <router-link to="/test">Go to Test View</router-link>
       </div>
       <div id="dynamic-component-demo" class="demo">
-        <button
-          v-for="tab in tabs"
-          v-bind:key="tab"
-          v-bind:class="['tab-button', { active: currentTab === tab }]"
-          v-on:click="currentTab = tab"
-        >{{ tab }}</button>
+        <button v-for="tab in tabs" v-bind:key="tab" v-bind:class="['tab-button', { active: currentTab === tab }]" v-on:click="currentTab = tab">{{ tab }}</button>
         <component v-bind:is="currentTabComponent" class="tab"></component>
       </div>
     </div>
@@ -48,8 +45,13 @@ Vue.component("tab-test", {
   template: "<div>Test component</div>"
 });
 
+import Calculator from "../components/Calculator";
+
 export default {
   name: "home",
+  components: {
+    Calculator
+  },
   data() {
     return {
       msg: "Welcome to Your Vue.js App",
