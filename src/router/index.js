@@ -11,9 +11,14 @@ const User = resolve => {
     resolve(require('./../views/User'))
   })
 }
-const Test = resolve => {
+const Mobile = resolve => {
   require.ensure([], () => {
-    resolve(require('./../views/Test'))
+    resolve(require('./../views/Mobile'))
+  })
+}
+const Clock = resolve => {
+  require.ensure([], () => {
+    resolve(require('./../views/Clock'))
   })
 }
 
@@ -58,8 +63,12 @@ export default new Router({
       component: User
     },
     {
-      path: '/test',
-      component: Test
+      path: '/mobile',
+      component: Mobile
+    },
+    {
+      path: '/clock',
+      component: Clock
     },
     {
       path: '*',

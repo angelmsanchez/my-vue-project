@@ -22,7 +22,7 @@
       <div class="routing">
         <router-link to="/counter">Go to Counter View</router-link>
         <div @click="goToUser()">Go to User View</div>
-        <router-link to="/test">Go to Test View</router-link>
+        <router-link to="/mobile">Go to Mobile View</router-link>
       </div>
       <div id="dynamic-component-demo" class="demo">
         <button v-for="tab in tabs" v-bind:key="tab" v-bind:class="['tab-button', { active: currentTab === tab }]" v-on:click="currentTab = tab">{{ tab }}</button>

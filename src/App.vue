@@ -1,10 +1,25 @@
 <template>
-  <div id="app">
-    <transition>
-      <router-view></router-view>
-    </transition>
+  <div id='app-root'>
+    <v-app>
+      <Menu></Menu>
+      <v-content>
+        <v-container fluid>
+          <router-view :key="$route.fullPath"></router-view>
+        </v-container>
+      </v-content>
+    </v-app>
   </div>
 </template>
+
+<script>
+import Menu from "./components/Menu";
+
+export default {
+  components: {
+    Menu
+  }
+};
+</script>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
