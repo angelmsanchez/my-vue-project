@@ -36,15 +36,15 @@ export default {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  .background-panels {
-    position: absolute;
-    left: 20%;
-    display: flex;
-    width: 1800px;
-    border: 2px solid #0f0f0f;
-    flex-wrap: wrap;
-    transform: translate(-50%, -50%) rotate(-30deg) skewX(30deg);
-  }
+}
+.background-panels {
+  position: absolute;
+  left: 20%;
+  display: flex;
+  width: 1800px;
+  border: 2px solid #0f0f0f;
+  flex-wrap: wrap;
+  transform: translate(-50%, -50%) rotate(-30deg) skewX(30deg);
   div {
     height: 500px;
     width: 580px;
