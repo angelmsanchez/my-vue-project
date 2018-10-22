@@ -3,7 +3,6 @@
     <div id="home">
       <img src="./../assets/logo.png">
       <h1>{{ msg }}</h1>
-      <Calculator></Calculator>
       <h2>Ecosystem</h2>
       <ul>
         <li>
@@ -45,13 +44,9 @@ Vue.component("tab-test", {
   template: "<div>Test component</div>"
 });
 
-import Calculator from "../components/Calculator";
 
 export default {
   name: "home",
-  components: {
-    Calculator
-  },
   data() {
     return {
       msg: "Welcome to Your Vue.js App",

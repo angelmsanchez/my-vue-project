@@ -21,6 +21,16 @@ const Clock = resolve => {
     resolve(require('./../views/Clock'))
   })
 }
+const Calculator = resolve => {
+  require.ensure([], () => {
+    resolve(require('./../views/Calculator'))
+  })
+}
+const ShuffleCards = resolve => {
+  require.ensure([], () => {
+    resolve(require('./../views/ShuffleCards'))
+  })
+}
 
 Vue.use(Router)
 
@@ -69,6 +79,14 @@ export default new Router({
     {
       path: '/clock',
       component: Clock
+    },
+    {
+      path: '/calculator',
+      component: Calculator
+    },
+    {
+      path: '/ShuffleCards',
+      component: ShuffleCards
     },
     {
       path: '*',
