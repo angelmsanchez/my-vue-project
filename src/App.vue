@@ -2,11 +2,9 @@
   <div id='app-root'>
     <v-app>
       <Menu></Menu>
-      <v-content>
-        <v-container fluid>
-          <router-view :key="$route.fullPath"></router-view>
-        </v-container>
-      </v-content>
+      <v-container fluid>
+        <router-view :key="$route.fullPath"></router-view>
+      </v-container>
     </v-app>
   </div>
 </template>
